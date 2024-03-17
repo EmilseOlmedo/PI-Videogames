@@ -1,5 +1,6 @@
 const {getAllVideogames} = require ('../controllers/allGamesController')
 const {getVideogamesByName} = require ('../controllers/gameByNameController')
+const {getGamesById} = require ('../controllers/gameByIdController')
 
 
 const getVideogames = async(req, res) => {
@@ -12,5 +13,19 @@ const getVideogames = async(req, res) => {
     }
 };
 
-module.exports = {getVideogames}
+
+const getVideogamesById = async (req, res) => {
+    const {id} = req.params;
+    try {
+        const gamesId = await getGamesById(id)
+        res.status(200).json(gamesId);
+    } catch (error) {
+        res.status(500).json({error: error.message})
+    }
+}
+
+module.exports = {
+    getVideogames,
+    getVideogamesById
+}
 
