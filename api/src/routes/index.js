@@ -10,13 +10,7 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.use('/videogames', videogameRouter)
-// router.use('/genres', genreRouter)
-
-//BORRARRRRRRRRRRRRRRRRRRRRRRRRR
-/*router.get('/videogames', getVideogames);
-router.get("/videogames/:idVideogame", getVideogameById);
-router.post('/videogames', createVideogame);
-router.get("/genres", getGenres);*/ 
+router.use('/genres', genreRouter)
 
 module.exports = router;
 

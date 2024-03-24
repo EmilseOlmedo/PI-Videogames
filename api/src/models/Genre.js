@@ -1,4 +1,7 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
+// const {v4: uuid} = require('uuid')//ver
+// type: DataTypes.UUID,
+// defaultValue: () => uuid(),
 
 module.exports = (sequelize) => {
     // defino el modelo
@@ -13,9 +16,9 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate: {
-                len: [0, 15],
-            },
+            // validate: {
+            //     len: [0, 15],
+            // },
         },
     },
     { timestamps: false });

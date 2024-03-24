@@ -1,10 +1,12 @@
-require('dotenv').config();
+require('dotenv').config(); //dependencia que ejecutamos para poder leer .env
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
   DB_USER, DB_PASSWORD, DB_HOST
 } = process.env;
+const VideogameModel = require("./models/Videogame");
+const GenreModel = require("./models/Genre");
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -30,6 +32,9 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
+VideogameModel(sequelize); //no hace falta
+GenreModel(sequelize); //no hace falta
+
 const { Videogame, Genre } = sequelize.models;
 
 // Aca vendrian las relaciones

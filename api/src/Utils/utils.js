@@ -30,8 +30,10 @@ const allGamesApi = [];
       const videogames = response.data.results.map(game=> ({
         id: game.id,
         name: game.name,
+        platforms: game.platforms.map((p) => p.platform.name),
         background_image: game.background_image,
-        genres: game.genres,
+        released: game.released,
+        genres: game.genres.map((g) => g.name),
         rating: game.rating,
         userCreated: false,
       }));

@@ -26,3 +26,14 @@ conn.sync({ force: true }).then(() => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
+
+
+//SINCRONIZACIÓN DE MODELOS:
+/*User.sync()- Esto crea la tabla si no existe (y no hace nada si ya existe)
+User.sync({ force: true })- Esto crea la tabla, eliminándola primero si ya existía.
+User.sync({ alter: true })- Esto verifica cuál es el estado actual de la tabla en la
+base de datos (qué columnas tiene, cuáles son sus tipos de datos, etc.) y luego realiza
+ los cambios necesarios en la tabla para que coincida con el modelo.*/
+
+ //SINCRONIZACIÓN DE TODOS LOS MODELOS A LA VEZ
+ /*conn.sync({ force: true })*/
