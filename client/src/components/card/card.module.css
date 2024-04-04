@@ -1,0 +1,71 @@
+.containerCard {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    max-height: 270px;
+    max-width: 300px;
+    flex-direction: column;
+    padding: 100px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    background-color: rgba(252, 250, 255, 0.5);
+    box-shadow: 2px 2px 4px 4px rgba(227, 209, 252, 1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.containerCard img {
+    display: flex;
+    position: relative;
+    top: -50px;
+    max-height: 100px;
+    margin-right: 20px;
+    margin-left: -10;
+    max-width: 100%;
+    transform: scale(2.5, 1.9);
+    background-color: rgba(255, 255, 255, 0.432);
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 1px solid black;
+    object-fit: cover;
+  }
+
+.containerCard:hover{
+    background-color: rgb(255, 162, 41, 0.6);
+    transition: background-color 0.5s;
+  }
+
+.textCard {
+    padding: 10px; 
+    font-size: 14px;
+    position: relative;
+    bottom: 25px;
+    right: 60px;
+    width: 200px;
+}
+
+.textCard p {
+    display: inline;
+   
+  }
+
+  .textCard p b {
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 1px;
+
+  }
+
+.textCard strong {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap; 
+    color:black;
+    margin-top: 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 1px;
+  }
+
+ 
