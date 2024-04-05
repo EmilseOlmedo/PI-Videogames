@@ -5,10 +5,12 @@ import { getAllVideogames } from "../../redux/actions";
 
 
 import NavBar from "../../components/navBar/NavBar";
-import Cards from "../../components/cards/Cards";
+import Pagination from "../../components/pagination/Pagination";
+// import Cards from "../../components/cards/Cards";
 
 
- const Home = () =>{
+
+const Home = () =>{
 
   const dispatch = useDispatch();
   // const {allVideogames} = useSelector((state)=>state) //me suscribo a los cambios de mi initialSate= allVideogames del reducer 
@@ -25,8 +27,12 @@ import Cards from "../../components/cards/Cards";
     return (
       <div>
         <p>Estoy en Home</p>
+
         <NavBar />
-        <Cards allVideogames = {allVideogames}/>
+        <Pagination allVideogames={allVideogames}/>
+        {/* <Cards /> */}
+        
+
       </div>
     );
   }
@@ -44,3 +50,6 @@ import Cards from "../../components/cards/Cards";
 //       setGames([])
 //     }
 //   }, [])
+
+/*
+<Cards allVideogames = {allVideogames}/>*/
