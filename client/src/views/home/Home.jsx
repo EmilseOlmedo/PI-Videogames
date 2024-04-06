@@ -30,9 +30,7 @@ const Home = () =>{
 
         <NavBar />
         <Pagination allVideogames={allVideogames}/>
-        {/* <Cards /> */}
-        
-
+      
       </div>
     );
   }
