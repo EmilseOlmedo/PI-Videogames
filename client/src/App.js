@@ -3,7 +3,7 @@ import './App.css';
 import {Route, Routes} from 'react-router-dom';
 
 import Detail from './views/detail/Detail';
-import Form from './views/form/Form ';
+import Form from './views/form/Form';
 import Home from './views/home/Home';
 import Landing from './views/landingPage/LandingPage';
 
