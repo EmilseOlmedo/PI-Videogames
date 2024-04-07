@@ -38,8 +38,11 @@ const Form = () =>{
     return (
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">NAME </label>
-        <input onChange={handleChange}type="name" name="name" value={input.name}/>
-        {errors.name && <p style={{color: 'red'}}>{errors.name}</p>} 
+        <input type="name" 
+        name="name" 
+        value={input.name}
+        onChange={handleChange}/>
+        {errors.name && <p style={{color: 'darkgrey'}}>{errors.name}</p>} 
         <br/>
 
         <label htmlFor="background_image">IMAGE </label>
@@ -47,26 +50,47 @@ const Form = () =>{
         name="background_image" 
         value={input.background_image} 
         onChange={handleChange}/>
+        {errors.background_image && <p style={{color: 'darkgrey'}}>{errors.background_image}</p>}
         <br/>
 
         <label htmlFor="description">DESCRIPTION </label>
-        <input type="text" name="description" value={input.description} onChange={handleChange}/>
+        <input type="text" 
+        name="description" 
+        value={input.description} 
+        onChange={handleChange}/>
+        {errors.description && <p style={{color: 'darkgrey'}}>{errors.description}</p>}
         <br/>
 
         <label htmlFor="platforms">PLATFORMS </label>
-        <input type="text" name="platforms" value={input.platforms} onChange={handleChange}/>
+        <input type="text" 
+        name="platforms" 
+        value={input.platforms} 
+        onChange={handleChange}/>
+        {errors.platforms && <p style={{color: 'darkgrey'}}>{errors.platforms}</p>}
         <br/>
 
         <label htmlFor="released">RELEASED </label>
-        <input type="text" name="released" value={input.released} onChange={handleChange}/>
+        <input type="text" 
+        name="released" 
+        value={input.released} 
+        onChange={handleChange}/>
+        {errors.released && <p style={{color: 'darkgrey'}}>{errors.released}</p>}
         <br/>
 
         <label htmlFor="rating">RATING </label>
-        <input type="number" name="rating" value={input.rating} onChange={handleChange}/>
+        <input type="number" 
+        name="rating" 
+        value={input.rating}
+        onChange={handleChange}/>
+        {errors.rating && <p style={{color: 'darkgrey'}}>{errors.rating}</p>}
         <br/>
 
         <label htmlFor="genres">GENRES </label>
-        <input type="text" name="genres" value={input.genres} onChange={handleChange}/>
+        <input type="text" 
+        name="genres" 
+        value={input.genres} 
+        onChange={handleChange}/>
+        {errors.genres && <p style={{color: 'darkgrey'}}>{errors.genres}</p>}
         <br/>
 
         <button type='submit'>Create</button>

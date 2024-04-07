@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-import { GET_ALL_VIDEOGAMES, GET_VIDEOGAMES_DETAIL } from "./action-types.js";
+import { 
+    GET_ALL_VIDEOGAMES,
+    GET_VIDEOGAMES_DETAIL,
+    GET_VIDEOGAMES_NAME
+ } from "./action-types.js";
 
 
 const URL_BASE = 'http://localhost:3001/videogames'
@@ -36,8 +40,22 @@ const getVideogamesDetail = (id)=>{
     }
 }
 
+const getVideogamesName = (name)=>{
+        return async (dispatch)=>{
+            try {
+                const {data} = await axios.get(`${URL_BASE}?name=${name}`)
+                    dispatch ({
+                    type: GET_VIDEOGAMES_NAME,
+                    payload: data
+                    })
+            } catch (error) {
+                throw error ('Error receiving videogame information from the server')           
+            }
+        }
+    }
 
  export {
     getAllVideogames,
     getVideogamesDetail,
+    getVideogamesName
 };

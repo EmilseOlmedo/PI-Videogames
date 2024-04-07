@@ -1,4 +1,51 @@
-.containerCard {
+.containerCard{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(252, 250, 255, 0.5);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grey;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+.containerCard:hover {
+  transform: scale(1.05);
+}
+
+.containerCard img {
+  display: flex;
+  position: relative;
+  top: -50px;
+  max-height: 100px;
+  margin-right: 20px;
+  margin-left: -10;
+  max-width: 100%;
+  transform: scale(2.5, 1.9);
+  background-color:grey;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 1px solid black;
+  object-fit: cover;
+}
+.textCard {
+  padding: 10px; 
+  font-size: 14px;
+  position: relative;
+  bottom: 25px;
+  right: 60px;
+  width: 200px;
+}
+/* .gameImage {
+  border: rgb(179, 179, 179) 7px ridge;
+  border-radius: 10px;
+  width: 180px;
+  margin-right: 10px;
+  background-color: rgb(149, 243, 243);
+} */
+/* .containerCard {
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -68,4 +115,4 @@
     letter-spacing: 1px;
   }
 
- 
+  */

@@ -8,11 +8,11 @@ const Card = ({game}) =>{
     return (
       <div className={styles.containerCard}>
       
-        <h2 className={styles.text}>{name}</h2>
-        <Link to={`/detail/${id}`} >
-        <img src = {background_image} alt= "name"/>
-        </Link>
-        <p>{genres}</p>
+      <h2 className={styles.text}>{name}</h2>
+      <Link to={`/detail/${id}`} >
+      <img src = {background_image} alt= "name"/>
+      </Link>
+      <p>{genres}</p>
         
       
       </div>

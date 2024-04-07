@@ -1,10 +1,17 @@
 .cardsContainer {
+    width: 85vw;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+/* .cardsContainer {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center;
     margin-top: 10px;
     background-color: rgb(23, 25, 53); 
-}
+} */
 
 /* .cardsContainer {
     padding: 20px;

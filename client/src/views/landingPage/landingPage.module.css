@@ -9,18 +9,18 @@
 }
 
 .start {
-    margin-top: 150%;
-    width: 140%;
+    margin-top: 240%;
+    width: 300%;
     height: 3rem;
     border-radius: 10px;
     font-size: 2em;
     color:rgb(241, 247, 247);
-    background-color:rgb(2, 67, 67);
+    background-color: #bb37a7;
     border: none;
  }
   
   .start:hover {
     color:rgb(241, 247, 247);
-    background-color: #bb37a7;
+    background-color:#4338c6;
     cursor: pointer;
   }
