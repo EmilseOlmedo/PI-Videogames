@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {Link} from 'react-router-dom';
 import validation from "./validation";
+import { getGenres } from "../../redux/actions";
 
 const Form = () =>{
+  const dispatch = useDispatch()
+  const genres = useSelector((state)=>state.genres)
   const [input, setInput] = useState({
     name: "",
     background_image: "",
@@ -25,6 +30,18 @@ const Form = () =>{
     // setErrors(
     //   validation(input))  
   }
+
+//   const handleSelectGender =(event)=>{
+//     event.target.value
+
+// }
+
+  useEffect(()=>{
+    dispatch(getGenres())
+    console.log(getGenres());
+  }, []);
+
+
   useEffect(()=>{
     if(input){
       setErrors(validation(input))
@@ -35,7 +52,9 @@ const Form = () =>{
     event.preventDefault();
   }
 
-    return (
+  return (
+    <div>
+      <h1>CREATE YOUR VIDEOGAME</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">NAME </label>
         <input type="name" 
@@ -85,18 +104,42 @@ const Form = () =>{
         {errors.rating && <p style={{color: 'darkgrey'}}>{errors.rating}</p>}
         <br/>
 
-        <label htmlFor="genres">GENRES </label>
-        <input type="text" 
-        name="genres" 
-        value={input.genres} 
-        onChange={handleChange}/>
-        {errors.genres && <p style={{color: 'darkgrey'}}>{errors.genres}</p>}
-        <br/>
-
-        <button type='submit'>Create</button>
+        <label htmlFor="genre">GENRE   
+        <select
+              onChange={(e)=>{handleChange(e)}}>
+                <option value="null">Select genre</option>
+                {genres.map((elem)=>{
+                  return (
+                    <option value={elem.name} key={elem.name}>
+                      {elem.name}
+                    </option>
+                  )
+                })}
+            </select>
+            </label>
       </form>
-    );
-  }
+      <button type='submit'>Create</button>
+      <br/>
+      <Link to= '/home'><button>BACK</button></Link>
+    </div>
+  );
+}
   
   export default Form;
+ /* <label htmlFor="genres">GENRES </label>
+  <input type="text" 
+  name="genres" 
+  value={input.genres} 
+  onChange={handleChange}/>
+  {errors.genres && <p style={{color: 'darkgrey'}}>{errors.genres}</p>}
+  <br/>*/
 
+  // <div>
+  //         <label htmlFor="genres">GENRES 
+  //           <select onChange={handleChange}>
+  //             {genres.map((genre)=>{
+  //             <option name= {genre.id} value={genre.name}>{genre.name}</option>
+  //             })}
+  //           </select>
+  //         </label>
+  //       </div>

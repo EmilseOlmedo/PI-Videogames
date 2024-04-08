@@ -7,7 +7,7 @@ import {
     ORDER_RATING,
     FILTER_API_DB,
     FILTER_GENRES,
-    CREATE_VIDEOGAME
+    POST_VIDEOGAME
 } from './action-types.js'
 
 const initialState = {
@@ -44,7 +44,7 @@ const reducer = (state = initialState, action)=>{
                 genres: action.payload,
             }
 
-        case CREATE_VIDEOGAME:
+        case POST_VIDEOGAME:
             return {
                 ...state,
                 allVideogames: action.payload,
@@ -102,29 +102,3 @@ const reducer = (state = initialState, action)=>{
 
 export default reducer;
 
-// case FILTER_GENRES:
-//             const {genre, userCreated} = action.payload;
-//             //Primero el genero
-//       let filteredGamesByGenre =
-//       genre === "All"
-//         ? state.allVideogames
-//         : state.allVideogames.filter(
-//             (game) =>
-//               game.genres.findIndex(
-//                 (element) => element.id === parseInt(genre)
-//               ) > -1
-//           );
-
-//     //Segundo por creador
-//     let filteredGames =
-//       userCreated === "All"
-//         ? filteredGamesByGenre
-//         : filteredGamesByGenre.filter(
-//             (game) => game.userCreated === parseInt(userCreated)
-//           );
-
-//     //El resultado de los dos niveles de filtrado se copia en el estado
-//     return {
-//       ...state,
-//       allVideogames: filteredGames,
-//     };

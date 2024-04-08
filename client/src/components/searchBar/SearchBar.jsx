@@ -23,7 +23,7 @@ const SearchBar = ()=>{
                     <input
                         type='search'
                         value={name}
-                        placeholder= 'Videogame name'
+                        placeholder= 'Search videogame'
                         onChange={handleChange}
                     />
                     <button

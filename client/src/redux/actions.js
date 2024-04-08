@@ -5,6 +5,7 @@ import {
     GET_VIDEOGAMES_DETAIL,
     GET_VIDEOGAMES_NAME,
     GET_GENRES,
+    POST_VIDEOGAME,
     FILTER_GENRES,
     ORDER_ALP,
     ORDER_RATING,
@@ -69,10 +70,26 @@ const getVideogamesName = (name)=>{
                     payload: data
             })
             } catch (error) {
-                throw error ('Error.message')
+                throw error (error.message)
                 
             }
         }
+    }
+
+    const postVideogames = (payload)=> {
+        return async (dispatch)=>{
+            try {
+                const {data} = await axios.post(URL_BASE, payload);
+                dispatch ({
+                    type: POST_VIDEOGAME,
+                    payload: data
+                })
+                
+            } catch (error) {
+                throw error (error.message)
+            }
+        }
+
     }
 
     const filterGameByGenre = (filter) => {
@@ -110,6 +127,7 @@ const getVideogamesName = (name)=>{
     getVideogamesDetail,
     getVideogamesName,
     getGenres,
+    postVideogames,
     filterGameByGenre,
     orderAlp,
     orderRating,
