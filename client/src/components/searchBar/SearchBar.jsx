@@ -23,16 +23,15 @@ const SearchBar = ()=>{
                     <input
                         type='search'
                         value={name}
-                        placeholder= 'Type the name of the game'
+                        placeholder= 'Videogame name'
                         onChange={handleChange}
                     />
                     <button
                         type='submit'
-                        disable={name.length<2}
+                        disabled={name.length<2}
                         onClick={handleSubmit}>
                             Search
                     </button>                    
-                
             </form>
         </div>
     )

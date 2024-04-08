@@ -3,7 +3,12 @@ import axios from 'axios';
 import { 
     GET_ALL_VIDEOGAMES,
     GET_VIDEOGAMES_DETAIL,
-    GET_VIDEOGAMES_NAME
+    GET_VIDEOGAMES_NAME,
+    GET_GENRES,
+    FILTER_GENRES,
+    ORDER_ALP,
+    ORDER_RATING,
+    FILTER_API_DB,
  } from "./action-types.js";
 
 
@@ -53,9 +58,60 @@ const getVideogamesName = (name)=>{
             }
         }
     }
+    
+    const getGenres =()=>{
+        return async(dispatch)=>{
+            try {
+                const response = await axios.get("http://localhost:3001/genres")
+                const data = response.data.sort((a, b) => a.name.localeCompare(b.name));
+                dispatch ({
+                    type: GET_GENRES,
+                    payload: data
+            })
+            } catch (error) {
+                throw error ('Error.message')
+                
+            }
+        }
+    }
+
+    const filterGameByGenre = (filter) => {
+        return {
+          type: FILTER_GENRES,
+          payload: filter,
+        };
+      };
+
+    const orderAlp = (order) =>{
+        return {
+            type: ORDER_ALP,
+            payload: order
+        }
+    }
+
+    const orderRating = (order)=>{
+        return {
+            type: ORDER_RATING,
+            payload: order
+        }
+    }
+
+    const filterCreated = (filter) =>{
+        return {
+            type: FILTER_API_DB, 
+            payload: filter
+        }
+    }
+
+
 
  export {
     getAllVideogames,
     getVideogamesDetail,
-    getVideogamesName
+    getVideogamesName,
+    getGenres,
+    filterGameByGenre,
+    orderAlp,
+    orderRating,
+    filterCreated
 };
