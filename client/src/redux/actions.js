@@ -70,7 +70,7 @@ const getVideogamesName = (name)=>{
                     payload: data
             })
             } catch (error) {
-                throw error (error.message)
+                throw error ('Error receiving videogame information from the server - genres')
                 
             }
         }
@@ -86,11 +86,23 @@ const getVideogamesName = (name)=>{
                 })
                 
             } catch (error) {
-                throw error (error.message)
+                window.alert (error.message)
             }
         }
-
     }
+
+    // export const addGame = (data) => {
+    //     return function (dispatch) {
+    //       try {
+    //         return dispatch({
+    //           type: ADD_GAME,
+    //           payload: data,
+    //         });
+    //       } catch (error) {
+    //         window.alert(error.message);
+    //       }
+    //     };
+    //   };
 
     const filterGameByGenre = (filter) => {
         return {

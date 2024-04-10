@@ -1,118 +1,44 @@
-.containerCard{
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(252, 250, 255, 0.5);
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 25px;
-  cursor: pointer;
-  -moz-osx-font-smoothing: grey;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.25s ease-out;
-}
-.containerCard:hover {
-  transform: scale(1.05);
-}
-
-.containerCard img {
-  display: flex;
+.hero {
+  display: inline-block;
   position: relative;
-  top: -50px;
-  max-height: 100px;
-  margin-right: 20px;
-  margin-left: -10;
-  max-width: 100%;
-  transform: scale(2.5, 1.9);
-  background-color:grey;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 1px solid black;
-  object-fit: cover;
-}
-.textCard {
-  padding: 10px; 
-  font-size: 14px;
-  position: relative;
-  bottom: 25px;
-  right: 60px;
-  width: 200px;
-}
-/* .gameImage {
-  border: rgb(179, 179, 179) 7px ridge;
-  border-radius: 10px;
-  width: 180px;
-  margin-right: 10px;
-  background-color: rgb(149, 243, 243);
-} */
-/* .containerCard {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-sizing: border-box;
-    max-height: 270px;
-    max-width: 300px;
-    flex-direction: column;
-    padding: 100px;
-    margin-left: 20px;
-    margin-bottom: 25px;
-    background-color: rgba(252, 250, 255, 0.5);
-    box-shadow: 2px 2px 4px 4px rgba(227, 209, 252, 1);
-    overflow: hidden;
-    z-index: 1;
+  width: 400px;
+  min-width: 400px;
+  height: 400px;
+  border-radius: 30px;
+  overflow:hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  margin: 30px;
 }
 
-.containerCard img {
-    display: flex;
-    position: relative;
-    top: -50px;
-    max-height: 100px;
-    margin-right: 20px;
-    margin-left: -10;
-    max-width: 100%;
-    transform: scale(2.5, 1.9);
-    background-color:grey;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 1px solid black;
-    object-fit: cover;
-  }
-
-.containerCard:hover{
-    background-color: rgba(95, 8, 141, 0.6);
-    transition: background-color 0.5s;
-  }
-
-.textCard {
-    padding: 10px; 
-    font-size: 14px;
-    position: relative;
-    bottom: 25px;
-    right: 60px;
-    width: 200px;
+.hero img {
+  width: 120%;
+  height: 100%;
+  object-fit:contain
 }
 
-.textCard p {
-    display: inline;
-   
-  }
-
-  .textCard p b {
-    font-family: 'Chakra Petch', sans-serif;
-    letter-spacing: 1px;
-
-  }
-
-.textCard strong {
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    white-space: nowrap; 
-    color:whitesmoke;
-    margin-top: 5px;
-    font-family: 'Chakra Petch', sans-serif;
-    letter-spacing: 1px;
-  }
-
-  */
+.containerText {
+  background-image: linear-gradient(0deg , #3f5efb, #fc466b);
+  border-radius: 30px;
+  position: absolute;
+  top: 55%;
+  left: -5px;
+  height: 65%;
+  width: 108%;
+  transform: skew(19deg, -9deg);
+}
+.title {
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  font-weight: bold;
+  right: 50px;
+  bottom: 26%;
+}
+.description {
+  position: absolute;
+  color: #fff;
+  font-weight: 900;
+  right: 50px;
+  bottom: 20%;
+}
