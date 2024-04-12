@@ -9,13 +9,15 @@ const NavBar = () =>{
 
 
     return (
-      <div className={style.containerNav}>
-        <Link to='/home'> <button>Home</button> </Link>
-        <Link to='/create'> <button>Create</button> </Link>
+      <div className={style.container}>
+        <div>       
+        <Link to='/home'> <button className={style.navigationButton}>Home</button> </Link>
+        <Link to='/create'> <button className={style.navigationButton}>Create</button> </Link>
+        </div>         
         <div>
           <SearchBar/>
           {/* <Filter/> */}
-        </div>        
+        </div>
       </div>
     );
   }

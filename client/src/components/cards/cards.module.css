@@ -1,23 +1,14 @@
-.cardsContainer {
-    width: 85vw;
-    margin:0vmax;
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-}
-/* .cardsContainer {
-    display: flex;
-    flex-wrap: wrap; 
+.containerCards {
     justify-content: center;
-    margin-top: 10px;
-    background-color: rgb(23, 25, 53); 
-} */
-
-/* .cardsContainer {
-    padding: 20px;
-    margin: 20px;
-    border-radius: 20px;
-    display:flex;
-    flex-wrap:wrap;
-} */
+    margin: 10px 20px 20px 0px;
+    /* display:grid;
+    grid-template-columns: repeat(3, 1fr); */
+    gap: 20px;
+    padding-bottom: 120px;
+  }
+  
+  /* .containerGlobal {
+    margin-top: 150px;
+    overflow-y: auto;
+    height: 87vh;
+  } */

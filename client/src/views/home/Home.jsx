@@ -11,12 +11,8 @@ import {
 
 } from "../../redux/actions";
 
-
-import NavBar from "../../components/navBar/NavBar";
 import Pagination from "../../components/pagination/Pagination";
-// import Cards from "../../components/cards/Cards";
-
-
+import style from './home.module.css';
 
 const Home = () =>{
 
@@ -61,13 +57,7 @@ const Home = () =>{
 
   
     return (
-      <div>
-        <div>
-          <NavBar />
-        </div>
-        <div>
-          <Pagination allVideogames={allVideogames}/>      
-        </div>
+      <div className={style.containerHome}>
         <div>
           <section>
             <select
@@ -101,7 +91,7 @@ const Home = () =>{
               onChange={(e)=>{
                 handleFilterGenre(e)
               }}>
-                <option value="null">Genre</option>
+                <option value="all">Genre</option>
                 {genres.map((elem)=>{
                   return (
                     <option value={elem.name} key={elem.name}>
@@ -111,6 +101,9 @@ const Home = () =>{
                 })}
             </select>
           </section>
+        </div>
+        <div>
+          <Pagination allVideogames={allVideogames}/>      
         </div>
       </div>
     );

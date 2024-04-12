@@ -1,8 +1,11 @@
+import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux" //nviar acciones a la tienda Redux.
 import { getVideogamesName } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = ()=>{
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -14,6 +17,8 @@ const SearchBar = ()=>{
     const handleSubmit = (event)=>{
         event.preventDefault();
         dispatch(getVideogamesName(name))
+        setName('')
+        navigate('/home')
     }
 
     return (
@@ -28,7 +33,7 @@ const SearchBar = ()=>{
                     />
                     <button
                         type='submit'
-                        disabled={name.length<2}
+                        // disabled={name.length<2}
                         onClick={handleSubmit}>
                             Search
                     </button>                    

@@ -1,13 +1,13 @@
 .hero {
   display: inline-block;
   position: relative;
-  width: 400px;
-  min-width: 400px;
-  height: 400px;
-  border-radius: 30px;
+  width: 300px;
+  min-width: 300px;
+  height: 300px;
+  border-radius: 20px;
   overflow:hidden;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
-  margin: 30px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  margin: 20px;
 }
 
 .hero img {
@@ -32,13 +32,13 @@
   font-weight: 600;
   font-size: 20px;
   font-weight: bold;
-  right: 50px;
-  bottom: 26%;
+  right: 20px;
+  bottom: 15%;
 }
 .description {
   position: absolute;
   color: #fff;
   font-weight: 900;
-  right: 50px;
-  bottom: 20%;
+  right: 20px;
+  bottom: 1%;
 }

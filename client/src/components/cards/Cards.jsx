@@ -6,7 +6,8 @@ import style from './cards.module.css';
 
 const Cards = ({ videogamesList }) => {
   return (
-    <div className={style.cardsContainer}>
+    // <div className={style.containerGlobal}>
+     <div className={style.containerCards}> 
       {videogamesList.map((game) => (
         <Card
           key={game.id}
@@ -14,6 +15,7 @@ const Cards = ({ videogamesList }) => {
         />
       ))}
     </div>
+    // </div>
   );
 };
   
