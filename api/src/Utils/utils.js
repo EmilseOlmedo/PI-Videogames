@@ -9,13 +9,14 @@ const URL = "https://api.rawg.io/api/games"
 const dbVideogames = async () =>{
   const allGamesDb= await Videogame.findAll(
     {
-      include: [
+      include: 
         {
           model: Genre,
           attributes: ["name"],
-          through: {attributes: []},
-        },
-      ],
+          through: {
+            attributes: [],
+          },
+        },  
     })
     
     return allGamesDb;
@@ -46,3 +47,13 @@ module.exports={
     dbVideogames,
     apiVideogames,
 }
+
+// {
+//   include: [
+//     {
+//       model: Genre,
+//       attributes: ["name"],
+//       through: {attributes: []},
+//     },
+//   ],
+// }

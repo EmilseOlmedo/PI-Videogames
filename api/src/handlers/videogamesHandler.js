@@ -45,13 +45,13 @@ const postVideogames = async(req, res) => {
                 description,
                 released, 
                 rating, 
-                genres
+                genres,
             });
 
         res.status(201).json({message: "The videogame was successfully created", newGame})
     } catch (error) {
         // console.error('Error creating video game:', error);
-        res.status(500).json({error: 'entró acá'})
+        res.status(500).json({error: error.message })
     }
 }
 
