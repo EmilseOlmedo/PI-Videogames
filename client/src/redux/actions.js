@@ -5,6 +5,7 @@ import {
     GET_VIDEOGAMES_DETAIL,
     GET_VIDEOGAMES_NAME,
     GET_GENRES,
+    GET_PLATFORMS,
     POST_VIDEOGAME,
     FILTER_GENRES,
     ORDER_ALP,
@@ -74,12 +75,26 @@ const getGenres =()=>{
         }
     }
 }
+const getPlatforms = () => {
+    return async (dispatch)=>{
+    try {
+        const responsePlatforms = await axios.get(`http://localhost:3001/platforms`);
+        const data = responsePlatforms.data;
+  
+        dispatch({
+            type: GET_PLATFORMS,
+            payload: data
+      });   
+    } catch (error) {
+        console.error('Error al recibir información de plataformas: ',error.message)
+    }};
+}
 
 const postVideogames = (payload)=> {
     return async (dispatch)=>{
         try {
             const {data} = await axios.post(URL_BASE, payload);
-             return dispatch ({
+             return  ({
                 type: POST_VIDEOGAME,
                 payload: data
             })
@@ -138,6 +153,7 @@ const postVideogames = (payload)=> {
     getVideogamesDetail,
     getVideogamesName,
     getGenres,
+    getPlatforms,
     postVideogames,
     filterGameByGenre,
     orderAlp,

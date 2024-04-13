@@ -7,3 +7,4 @@ export const ORDER_ALP = 'ORDER_ALP';
 export const ORDER_RATING = 'ORDER_RATING';
 export const FILTER_API_DB = 'FILTER_API_DB';
 export const FILTER_GENRES = 'FILTER_GENRES';
+export const GET_PLATFORMS = 'GET_PLATFORMS';

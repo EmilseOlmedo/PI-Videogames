@@ -3,6 +3,7 @@ import {
     GET_VIDEOGAMES_DETAIL,
     GET_VIDEOGAMES_NAME,
     GET_GENRES,
+    GET_PLATFORMS,
     ORDER_ALP,
     ORDER_RATING,
     FILTER_API_DB,
@@ -15,6 +16,7 @@ const initialState = {
     allVideogamesCopy: [],
     videogameDetail: [],
     genres: [],
+    platforms: [],
 }
 
 const reducer = (state = initialState, action)=>{
@@ -43,6 +45,12 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 genres: action.payload,
             }
+
+        case GET_PLATFORMS: 
+        return {
+            ...state,
+            platforms: action.payload
+        };
 
         case POST_VIDEOGAME:
             return {
