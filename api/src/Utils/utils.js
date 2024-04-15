@@ -1,5 +1,5 @@
 const axios = require ('axios');
-const {Videogame, Genre} = require ('../db')
+const {Videogame, Genre} = require ('../db.js')
 // require('dotenv').config();
 const { API_KEY } = process.env;
 const URL = "https://api.rawg.io/api/games"
@@ -7,19 +7,27 @@ const URL = "https://api.rawg.io/api/games"
 
 /*------ obtengo videogames de DB ----------*/
 const dbVideogames = async () =>{
-  const allGamesDb= await Videogame.findAll(
-    {
-      include: 
+  const allGamesDb= await Videogame.findAll({
+      include:
         {
           model: Genre,
           attributes: ["name"],
-          through: {
-            attributes: [],
+          through: {attributes: [],
           },
-        },  
+        },
+      
     })
-    
+    console.log('game de la db', allGamesDb);
     return allGamesDb;
+//     // console.log('game de la db', allGamesDb);
+//     return allGamesDb.map((e)=>{ //mapeo todos los juegos
+//       const genre = {               //creo un nuevo objeto con todas las propiedades dataValues
+//         ...e.dataValues,         //dataValues: propiedad que almacena los valores reales de las columnas del modelo.
+//         genres: e.genres.map((g)=>g.name).join(', ') //genres: propiedad del juego donde extraigo los nombres
+//       };
+//       console.log('aporte de cinti ', genre)
+//       return genre;
+//     })
 }
 
 
@@ -40,6 +48,7 @@ const allGamesApi = [];
       }));
       allGamesApi.push(...videogames)  
     }
+    // console.log('uutil db', allGamesApi);
     return allGamesApi;
 }
 
@@ -48,12 +57,3 @@ module.exports={
     apiVideogames,
 }
 
-// {
-//   include: [
-//     {
-//       model: Genre,
-//       attributes: ["name"],
-//       through: {attributes: []},
-//     },
-//   ],
-// }

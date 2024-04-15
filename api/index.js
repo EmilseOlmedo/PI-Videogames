@@ -18,10 +18,12 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
+// const { getAllGenres } = require('./src/controllers/genresControllers.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.--->Sincronizando todas las modelos a la vez.
 conn.sync({ force: true }).then(() => {
+  // getAllGenres();
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });

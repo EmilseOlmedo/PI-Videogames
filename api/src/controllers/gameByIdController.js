@@ -4,9 +4,11 @@ const {dbVideogames} = require('../Utils/utils');
 
 const getGamesById = async (id) => {
     const source = isNaN(id)? 'db' : 'api';
+    // console.log('Estoy en el controller de id:', source)
     try {
         if(source==='api'){
             return (await apiVideogames(id)).find(g=>g.id==id)
+            
         }else{
             return (await dbVideogames(id)).find(g=>g.id===id)
         }

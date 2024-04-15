@@ -1,63 +1,88 @@
-const {Genre, Videogame} = require ('../db');
+const {Genre, Videogame} = require ('../db.js');
 const {getAllVideogames} = require ('../controllers/allGamesController')
 
-
 const createVideogames = async (
-  {
-    name,
+  { name,
     platforms,
     background_image,
     description,
     released,
     rating,
-    genres
-  }
-) => {
+    genres}) => {
   try {
-
     //verifico que no exista
-    const videogameExist = (await getAllVideogames(name)).find(game => game.name == name);
-    if (videogameExist) { 
-      return {error:'The videogame already exists'}
-    } else {
-      const videogameCreate = await Videogame.create ({  //create: crea un {} con el prototipo de videogame
+    // const videogameExist = (await getAllVideogames(name)).find(game => game.name == name);
+    // if (videogameExist) { 
+    //   return {error:'The videogame already exists'}
+    // } else {
+    const videogameCreate = await Videogame.create ({  //create: crea un {} con el prototipo de videogame
         name,
+        description,
         platforms,
         background_image,
-        description,
         released,
         rating,
-       
       });
+      const genreDb = await Genre.findAll({
+         where: { name: genres }
+        })        
+      // console.log('estoy en create:', videogameCreate)
+    videogameCreate.addGenre(genreDb)
 
-      const associatedGenres = [];
-    // Para cada género, verificar si existe en la base de datos
-      for (let genreName of genres) {
-        // console.log("Creando género:", genreName);
-        const [genre, created] = await Genre.findOrCreate({ where: { name: genreName } });
-        // console.log("Genre:", genre); // Verifica el valor de 'genre'
-        // console.log("Created:", created); // Verifica el valor de 'created'
-      // Asociar el género al videojuego
-        await videogameCreate.addGenre(genre);
-        // console.log("Género asociado al videojuego:", genre);
-        associatedGenres.push(genre.name);
-      }
-      newGame= {
-        id: videogameCreate.id,
-        userCreated: true,
-        name: videogameCreate.name,
-        platforms: videogameCreate.platforms,
-        background_image: videogameCreate.background_image,
-        description: videogameCreate.description,
-        released: videogameCreate.released,
-        rating: videogameCreate.rating,
-        genres: associatedGenres // Incluir los géneros asociados     
-      }
-    return newGame
-    }
   } catch (error) {
-    throw Error (error.message)
+    throw Error ('error al crear el videogame')
   }
 }
 
-module.exports = {createVideogames}
+module.exports = {createVideogames};
+
+
+// const createVideogames = async (
+//   {name,
+//     platforms,
+//     background_image,
+//     description,
+//     released,
+//     rating,
+//     genres}) => {
+//   try {
+//     //verifico que no exista
+//     const videogameExist = (await getAllVideogames(name)).find(game => game.name == name);
+//     if (videogameExist) { 
+//       return {error:'The videogame already exists'}
+//     } else {
+//     const videogameCreate = await Videogame.create ({  //create: crea un {} con el prototipo de videogame
+//         name,
+//         description,
+//         platforms,
+//         background_image,
+//         released,
+//         rating,
+//       });
+
+//     // Para cada género, verificar si existe en la base de datos
+//     // for (let nameGenre of genres) {
+//       // Buscar el género
+//       // const genreVideogameCreate = genres.map ((g))
+//       if (genres.length){
+//         genres.map ((g)=> {const genreVideogameCreate = await Genre.findOrCreate({ 
+//         where: { name: g }})
+    
+//       console.log(genreVideogameCreate)
+//       videogameCreate.addGenre(genreVideogameCreate)
+//       // Si no se encuentra, crearlo
+//       // if (!genre) {
+//       //   genre = await Genre.create({ name: nameGenre });
+//       // }
+
+//       // Asociar el género al videojuego
+//       // await videogameCreate.addGenre(genre);
+//       // return newGame
+//     // }
+    
+//   } catch (error) {
+//     throw Error ('error al crear el videogame')
+//   }
+// }}
+
+// module.exports = {createVideogames};

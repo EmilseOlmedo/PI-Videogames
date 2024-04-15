@@ -16,9 +16,6 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            // validate: {
-            //     len: [0, 15],
-            // },
         },
     },
     { timestamps: false });
