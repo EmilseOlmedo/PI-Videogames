@@ -93,36 +93,37 @@ const Form = ()=>{
 
     return (
         <div className={style.containerForm}>
-            <form onSubmit={submitHandler}>
-                <div>
+            <div className={style.container}>
+                <form onSubmit={submitHandler}>
+                <div >
                     <label htmlFor="name">NAME </label>
-                    <input type="text" name="name" id="name" value={input.name} onChange={handleChange}></input>
+                    <input className={style.input} type="text" name="name" id="name" value={input.name} onChange={handleChange}></input>
                     {errors.name && <p style={{color: 'darkgrey'}}>{errors.name}</p>}
                 </div>
                 <div>
                     <label htmlFor="background_image">IMAGE </label>
-                    <input type="url" name="background_image" id="background_image" value={input.background_image} onChange={handleChange}></input>
+                    <input className={style.input} type="url" name="background_image" id="background_image" value={input.background_image} onChange={handleChange}></input>
                     {errors.background_image && <p style={{color: 'darkgrey'}}>{errors.background_image}</p>}
                 </div>
                 <div>
                     <label htmlFor="description">DESCRIPTION </label>
-                    <input type="text" name="description" id="description" value={input.description} onChange={handleChange}></input>
+                    <input className={style.input} type="text" name="description" id="description" value={input.description} onChange={handleChange}></input>
                     {/* {errors.description && <p style={{color: 'darkgrey'}}>{errors.description}</p>} */}
                 </div>
                 
                 <div>
                     <label htmlFor="released">RELEASED </label>
-                    <input type="text" name="released" id="released" value={input.released} onChange={handleChange}></input>
+                    <input className={style.input} type="text" name="released" id="released" value={input.released} onChange={handleChange}></input>
                     {errors.released && <p style={{color: 'darkgrey'}}>{errors.released}</p>}
                 </div>
                 <div>
                     <label htmlFor="rating">RATING </label>
-                    <input type="number" name="rating" id="rating" value={input.rating} onChange={handleChange}></input>
+                    <input className={style.input} type="number" name="rating" id="rating" value={input.rating} onChange={handleChange}></input>
                     {errors.rating && <p style={{color: 'darkgrey'}}>{errors.rating}</p>}
                 </div>
 
                 <label htmlFor="platforms">PLATFORMS </label>
-                <select id='platforms' name='platforms'onChange={(e)=> handleSelectPlatforms(e)}>
+                <select className={style.input} id='platforms' name='platforms'onChange={(e)=> handleSelectPlatforms(e)}>
                     <option value='none'>Select</option>
                     {orderPlatforms.map((pf)=>(
                         <option key={pf.id} value={pf.name}>
@@ -133,19 +134,16 @@ const Form = ()=>{
                 {errors.platforms && <p style={{color: 'darkgrey'}}>{errors.platforms}</p>}
                 <ul >
                     {input.platforms.map((i,index)=> (
-                        <li key={index}>
-                            {i}
-                            <button type="button" onClick={() => handleRemovePlatform(index)}>
-                                     x
-                                </button>
-                            </li>                        
-                    ))}
+                        <li key={index}>{i}
+                        <button type="button" onClick={() => handleRemovePlatform(index)}>
+                         x 
+                        </button></li>))}
                 </ul>
                
                 <label htmlFor="genres">GENRES </label>
-                <select id='genres' name='genre'onChange={(e) => handleSelectgenres(e)}>
+                <select className={style.input} id='genres' name='genre'onChange={(e) => handleSelectgenres(e)}>
                   <option value='none'>Select</option>
-                    {orderGenres.map((genre) => (
+                    {orderGenres?.map((genre) => (
                         <option key={genre.id} value={genre.name}>
                             {genre.name}
                         </option>
@@ -162,9 +160,9 @@ const Form = ()=>{
                         </li>
                     ))}
                     </ul>
-                <button type="submit">CREATE</button>
+                <button className= {style.submit} type="submit">CREATE</button>
             </form>
-                
+            </div>      
         </div>
 )
 

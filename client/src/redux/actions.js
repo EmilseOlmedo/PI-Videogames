@@ -63,8 +63,9 @@ const getVideogamesName = (name)=>{
 const getGenres =()=>{
     return async(dispatch)=>{
         try {
-            const response = await axios.get("http://localhost:3001/genres")
+            const response = await axios.get("http://localhost:3001/genres");
             const data = response.data.sort((a, b) => a.name.localeCompare(b.name));
+            console.log('estoy en actions-getGenres:', data)
             dispatch ({
                 type: GET_GENRES,
                 payload: data

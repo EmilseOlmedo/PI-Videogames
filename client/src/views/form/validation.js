@@ -15,10 +15,10 @@ const validation= (input)=>{
     if (input.background_image.length>0 && !urlRegex.test(input.background_image)){
         errors.background_image = 'You must enter a valid URL'
     }
-    // //description
-    // if(!input.description){
-    //     errors.description = 'Description is required'
-    // }
+    //description
+    if(input.description.length>350){
+        errors.description = 'The description should not exceed 50 characters'
+    }
     //platforms
     if(input.platforms.length>0 && !nameRegex.test(input.platforms)){
         errors.platforms = 'Special characters allowed: -,@.()!?'
