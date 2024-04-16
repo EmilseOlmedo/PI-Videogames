@@ -5,7 +5,7 @@ const getAllVideogames = async () => {
   const allApiGames = await apiVideogames();
   // console.log('ver que me llega de la api y de la bd: ', allApiGames);
   const allDbGames = await dbVideogames();
-
+  console.log('ver que me llega de la bd: ', allDbGames)
   const allVideogames = [...allApiGames, ...allDbGames]
 
   if (allVideogames.length === 0) 

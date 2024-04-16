@@ -29,6 +29,8 @@ const createVideogames = async (
       // console.log('estoy en create:', videogameCreate)
     videogameCreate.addGenre(genreDb)
 
+    return videogameCreate;
+
   } catch (error) {
     throw Error ('error al crear el videogame')
   }
