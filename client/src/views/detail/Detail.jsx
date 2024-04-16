@@ -19,15 +19,13 @@ const Detail = () =>{
         <div className={style.imagenContainer}>
           <img src = {videogameDetail.background_image} alt= "name"/>
         </div> 
-        <div className={style.description}>
+        <div className={style.description} >
+
           <p>ID: {id}</p>       
-          
           <p>Description: {videogameDetail.description}</p>
           <p>Released: {videogameDetail.released}</p>
           <p>Rating: {videogameDetail.rating}</p>
           <p>Genres: {videogameDetail.genres}</p>
-        </div>
-        <div className={style.platforms}>
           <p>Platforms: {videogameDetail.platforms}</p>
         </div>
       </div>

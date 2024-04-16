@@ -1,0 +1,20 @@
+.containerPag {
+    margin-top:5px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+  
+.buttom {
+    width: 140px;
+    padding: 4px;
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    outline:auto;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}

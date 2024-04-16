@@ -2,12 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Cards from '../cards/Cards';
 
-// export const Pagination = () =>{
-
-//     const pageNumber =[];
-//     // for (let i = 1; i)
-//     return <div>Pagination</div>
-// }
+import style from '../pagination/pagination.module.css';
 
 const Pagination = ({allVideogames}) => {
     // const games = allVideogames
@@ -32,12 +27,16 @@ const Pagination = ({allVideogames}) => {
     return (
       <div>
         <Cards videogamesList={currentCards} />
-        <button onClick={prevPage} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <button onClick={nextPage} disabled={indexOfLastCard >= allVideogames.length}>
-          Next
-        </button>
+        <div className={style.containerPag}>
+          <div>
+            <button className={style.buttom} onClick={prevPage} disabled={currentPage === 1}>
+              Previous
+            </button>
+          </div>
+            <button className={style.buttom} onClick={nextPage} disabled={indexOfLastCard >= allVideogames.length}>
+              Next
+            </button>
+        </div>
       </div>
     );
   };
