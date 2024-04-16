@@ -5,8 +5,10 @@
   display: flex;
   justify-content: center; 
   align-items: center; 
+  
 }
 .container {
+  margin-top: 65px;
   width: 500px;
   box-sizing: border-box;
   padding: 10px;

@@ -7,6 +7,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(213, 24, 178, 0.3); /* Agrega una sombra alrededor del contenedor */
   transition: box-shadow 0.3s; /* Agrega una transición suave al cambio de sombra */
+  margin-bottom: 20px;
 }
 
 .containerAll:hover {

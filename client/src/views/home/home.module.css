@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-    /* margin-top: 80px; */
+   
 }
 
 .title {
@@ -13,7 +13,6 @@
 }
 
 .containerDrop {
-  
   margin-top:5px;
   width: 600px;
   padding: 15px;
@@ -25,7 +24,7 @@
   width: 140px;
   padding: 4px;
   border: 2px solid #ccc;
-  border-radius: 5px; /* Para bordes redondeados */
+  border-radius: 5px; 
   outline: none; /* Quita el resaltado al enfocar */
   font-size: 14px;
   margin-right: 10px;
