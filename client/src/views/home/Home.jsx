@@ -12,6 +12,7 @@ import {
 } from "../../redux/actions";
 
 import Pagination from "../../components/pagination/Pagination";
+import SearchBar from "../../components/searchBar/SearchBar";
 import style from './home.module.css';
 
 const Home = () =>{
@@ -58,9 +59,12 @@ const Home = () =>{
   
     return (
       <div className={style.containerHome}>
-        <div>
+        <div className={style.title}>
+          <SearchBar />
+        </div>
+        <div className={style.containerDrop}>
           <section>
-            <select
+            <select className={style.dropInput}
               onChange = {(e)=>{
                 handleClickOrderAlp(e);
               }}>
@@ -69,7 +73,7 @@ const Home = () =>{
                 <option value="des">z-a</option>
             </select>
 
-            <select
+            <select className={style.dropInput}
               onChange={(e)=>{
                 handleClickOrderRating(e);
               }}>
@@ -78,7 +82,7 @@ const Home = () =>{
                 <option value="des">Max</option>
             </select>
 
-            <select
+            <select className={style.dropInput}
               onChange={(e)=>{
                 handleFilterCreated(e);
               }}>
@@ -87,7 +91,7 @@ const Home = () =>{
                 <option value="api">API</option>
             </select>
 
-            <select
+            <select className={style.dropInput}
               onChange={(e)=>{
                 handleFilterGenre(e)
               }}>

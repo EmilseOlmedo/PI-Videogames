@@ -5,12 +5,12 @@ const validation= (input)=>{
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     
     //name
-    if(!nameRegex.test(input.name)){
+    if(input.name.length>0 && !nameRegex.test(input.name)){
         errors.name = 'Special characters allowed: -@.()!?'
     }
-    if(!input.name){
-        errors.name = 'Name is required'
-    }
+    // if(!input.name){
+    //     errors.name = 'Name is required'
+    // }
     //image
     if (input.background_image.length>0 && !urlRegex.test(input.background_image)){
         errors.background_image = 'You must enter a valid URL'
@@ -32,9 +32,9 @@ const validation= (input)=>{
         errors.rating = "The value entered must be between 0 and 5";
     }
     //genres
-    if(input.genres.length === 0) {
-        errors.genres = 'You must select at least one genres';
-    };
+    // if(input.genres.length === 0) {
+    //     errors.genres = 'You must select at least one genres';
+    // };
     return errors;
 }
 

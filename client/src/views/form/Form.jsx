@@ -95,28 +95,29 @@ const Form = ()=>{
         <div className={style.containerForm}>
             <div className={style.container}>
                 <form onSubmit={submitHandler}>
+                <h1> CREATE VIDEOGAMES </h1>
                 <div className={style.inputContainer}>
                     <label htmlFor="name">NAME </label>
                     <input className={style.input} type="text" name="name" id="name" value={input.name} onChange={handleChange}></input>
                     {errors.name && <p style={{color: 'darkgrey'}}>{errors.name}</p>}
                 </div>
-                <div>
+                <div className={style.inputContainer}>
                     <label htmlFor="background_image">IMAGE </label>
                     <input className={style.input} type="url" name="background_image" id="background_image" value={input.background_image} onChange={handleChange}></input>
                     {errors.background_image && <p style={{color: 'darkgrey'}}>{errors.background_image}</p>}
                 </div>
-                <div>
+                <div className={style.inputContainer}>
                     <label htmlFor="description">DESCRIPTION </label>
                     <input className={style.input} type="text" name="description" id="description" value={input.description} onChange={handleChange}></input>
                     {/* {errors.description && <p style={{color: 'darkgrey'}}>{errors.description}</p>} */}
                 </div>
                 
-                <div>
+                <div className={style.inputContainer}>
                     <label htmlFor="released">RELEASED </label>
                     <input className={style.input} type="text" name="released" id="released" value={input.released} onChange={handleChange}></input>
                     {errors.released && <p style={{color: 'darkgrey'}}>{errors.released}</p>}
                 </div>
-                <div>
+                <div className={style.inputContainer}>
                     <label htmlFor="rating">RATING </label>
                     <input className={style.input} type="number" name="rating" id="rating" value={input.rating} onChange={handleChange}></input>
                     {errors.rating && <p style={{color: 'darkgrey'}}>{errors.rating}</p>}

@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux" //nviar acciones a la tienda Redux.
 import { getVideogamesName } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
 
+import style from '../searchBar/searchBar.module.css';
+
 const SearchBar = ()=>{
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -22,16 +24,16 @@ const SearchBar = ()=>{
     }
 
     return (
-        <div>
+        <div className={style.search}>
             <form onSubmit={handleSubmit}>
                 
-                    <input
+                    <input className={style.input}
                         type='search'
                         value={name}
                         placeholder= 'Search videogame'
                         onChange={handleChange}
                     />
-                    <button
+                    <button className= {style.submit}
                         type='submit'
                         // disabled={name.length<2}
                         onClick={handleSubmit}>

@@ -1,14 +1,7 @@
 .containerCards {
     justify-content: center;
-    margin: 10px 20px 20px 0px;
-    /* display:grid;
-    grid-template-columns: repeat(3, 1fr); */
+    margin: 60px 20px 20px 0px;
     gap: 20px;
     padding-bottom: 120px;
   }
-  
-  /* .containerGlobal {
-    margin-top: 150px;
-    overflow-y: auto;
-    height: 87vh;
-  } */
+

@@ -1,61 +1,31 @@
-.containerAll{
-    background-color: #1a117d;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border:#787d96;
-    position: absolute;
-    top: 45%; /* Lo posiciona en el centro vertical */
-    left: 50%; /* Lo posiciona en el centro horizontal */
-    transform: translate(-50%, -50%); /* Lo centra exactamente */
-    height: 50%;
-    width: 80%;
+.containerAll {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .imagenContainer {
-    position: relative;
-    width: 600px; /* Ancho deseado del contenedor */
-    height: 350px; /* Alto deseado del contenedor */
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    overflow: hidden; /* Hace que el contenido que exceda el tamaño del contenedor se oculte */
-    right: 4%;
-    box-shadow: 0px 0px 10px rgba(148, 123, 251, 0.413);
-    top: 15%;
-  }
-  /* .imagenContainer:hover {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  } */
+  margin-bottom: 20px;
+}
 
 .imagenContainer img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%; /* Establece el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Permite que la altura de la imagen se ajuste automáticamente para mantener la proporción */
-    /* display: block;  */
-  }
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
 
-  .title {
-    position: absolute;
-    color: #fff;
-    font-weight: 600;
-    font-size: 30px;
-    font-weight: bold;
-    right: 20px;
-    /* bottom: 15%; */
-  }
-  .description {
-    position: absolute;
-    color: #fff;
-    font-weight: 900;
-    right: 50px;
-    bottom: 1%;
-  }
-  .platforms {
-    position: absolute;
-    color: #fff;
-    font-weight: 900;
-    right: 50px;
-    bottom: 1%;
-  }
+.description {
+  margin-bottom: 20px;
+}
+
+.platforms {
+  font-style: italic;
+}
