@@ -1,7 +1,4 @@
 const { DataTypes } = require("sequelize");
-// const {v4: uuid} = require('uuid')//ver
-// type: DataTypes.UUID,
-// defaultValue: () => uuid(),
 
 module.exports = (sequelize) => {
     // defino el modelo

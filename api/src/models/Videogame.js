@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false, //no te permito que este campo esté vacío :si está seteado en false
+      allowNull: false, 
     },
     platforms: {
       type: DataTypes.ARRAY(DataTypes.STRING), // almacenar múltiples valores de texto relacionados en una única columna de una tabla.
@@ -33,10 +33,10 @@ module.exports = (sequelize) => {
       defaultValue: 'https://www.gaceta.unam.mx/wp-content/uploads/2023/08/230831-Aca9-des-f1-videojuegos.jpg'
     },
     released: {
-      type: DataTypes.STRING, //puede ser DATE
+      type: DataTypes.STRING,
     },
     rating: {
-      type: DataTypes.FLOAT, //PUEDE SER INTEGER
+      type: DataTypes.FLOAT,
       allowNull: false,
       validate: {
         min: 0,

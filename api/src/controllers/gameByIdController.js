@@ -1,4 +1,4 @@
-const {apiVideogames} = require ('../Utils/utils');
+const {videogameIdApi} = require ('../Utils/utils');
 const {dbVideogames} = require('../Utils/utils');
 
 
@@ -7,7 +7,7 @@ const getGamesById = async (id) => {
     // console.log('Estoy en el controller de id:', source)
     try {
         if(source==='api'){
-            return (await apiVideogames(id)).find(g=>g.id==id)
+            return (await videogameIdApi(id)).find(g=>g.id==id)
             
         }else{
             return (await dbVideogames(id)).find(g=>g.id===id)

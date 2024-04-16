@@ -18,7 +18,7 @@ const getAllGenres = async () => {
     return allGenres;
 
   } catch (error) {
-      console.error('Error al obtener datos generos de la api: ', error.mesage);
+      throw new Error('Error al obtener datos generos de la api: ', error.mesage);
   };
 };
 

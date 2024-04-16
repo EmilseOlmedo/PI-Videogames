@@ -12,10 +12,3 @@ const getGenres = async (req, res) => {
 }
 
 module.exports = {getGenres}
-
-// try {
-//     const allGenres = await getAllGenres()
-//     res.status(200).json(allGenres);
-// } catch (error) {
-//     res.status(500).json({error: error.message})
-// }

@@ -14,16 +14,13 @@ const dbVideogames = async () =>{
           through: {attributes: []},
         },]
     })
-    // console.log('game de la db', allGamesDb);
-    // return allGamesDb
-    console.log('game de la db', allGamesDb);
+
     return allGamesDb.map((e)=>{ //mapeo todos los juegos
       const genre = {               //creo un nuevo objeto con todas las propiedades dataValues
         ...e.dataValues,         //dataValues: propiedad que almacena los valores reales de las columnas del modelo.
         genres: e.Genres.map((g)=>g.name).join(", ") //genres: propiedad del juego donde extraigo los nombres
       };
       delete genre.Genres
-      // console.log('aporte de cinti ', genre)
       return genre;
     })
 }
@@ -40,18 +37,47 @@ const allGamesApi = [];
         platforms: game.platforms.map((p) => p.platform.name),
         background_image: game.background_image,
         released: game.released,
+        description: game.description,
         genres: game.genres.map((g) => g.name),
         rating: game.rating,
         userCreated: false,
       }));
       allGamesApi.push(...videogames)  
     }
-    // console.log('uutil db', allGamesApi);
+
     return allGamesApi;
 }
+
+//OBTENGO VIDEOGAMES POR id:
+const videogameIdApi = async (id) => {
+  const vgApi = [];
+  try {
+    const resp = await axios.get(
+      `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
+    );
+    
+    const dataId = resp.data;
+    vgApi.push({
+      id: dataId.id,
+      name: dataId.name,
+      image: dataId.background_image,
+      rating: dataId.rating,
+      genres: dataId.genres.map((g) => g.name),
+      description: dataId.description_raw,
+      released: dataId.released,
+      platforms: dataId.platforms.map((p) => p.platform.name),
+    });
+    console.log(vgApi);
+
+    return vgApi;
+  } catch (error) {
+    throw Error(error.message);
+  }
+};
 
 module.exports={
     dbVideogames,
     apiVideogames,
+    videogameIdApi
 }
 
