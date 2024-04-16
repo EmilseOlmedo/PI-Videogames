@@ -95,7 +95,7 @@ const Form = ()=>{
         <div className={style.containerForm}>
             <div className={style.container}>
                 <form onSubmit={submitHandler}>
-                <div >
+                <div className={style.inputContainer}>
                     <label htmlFor="name">NAME </label>
                     <input className={style.input} type="text" name="name" id="name" value={input.name} onChange={handleChange}></input>
                     {errors.name && <p style={{color: 'darkgrey'}}>{errors.name}</p>}

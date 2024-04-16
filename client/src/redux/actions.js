@@ -19,7 +19,8 @@ const URL_BASE = 'http://localhost:3001/videogames'
 const getAllVideogames = () =>{
     return async (dispatch) => {    //recibo un dispatch---El hook useDispatch sólo se puede utilizar en componentes funcionales
         try {
-            const {data} = await axios.get(URL_BASE);      
+            const {data} = await axios.get(URL_BASE);  
+            console.log('aa', data);    
             return dispatch ({ 
                 type: GET_ALL_VIDEOGAMES, 
                 payload: data
@@ -50,6 +51,7 @@ const getVideogamesName = (name)=>{
         return async (dispatch)=>{
             try {
                 const {data} = await axios.get(`${URL_BASE}?name=${name}`)
+                
                     dispatch ({
                     type: GET_VIDEOGAMES_NAME,
                     payload: data
@@ -63,9 +65,8 @@ const getVideogamesName = (name)=>{
 const getGenres =()=>{
     return async(dispatch)=>{
         try {
-            const response = await axios.get("http://localhost:3001/genres");
+            const response = await axios.get("http://localhost:3001/genres")
             const data = response.data.sort((a, b) => a.name.localeCompare(b.name));
-            console.log('estoy en actions-getGenres:', data)
             dispatch ({
                 type: GET_GENRES,
                 payload: data

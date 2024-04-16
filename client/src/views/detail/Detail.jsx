@@ -10,7 +10,7 @@ const Detail = () =>{
   const videogameDetail = useSelector ((state)=>state.videogameDetail)
 //videogamesDetail es un {}
   useEffect(()=>{
-    dispatch(getVideogamesDetail(id))
+  dispatch(getVideogamesDetail(id))
   }, [dispatch, id])
 
     return (

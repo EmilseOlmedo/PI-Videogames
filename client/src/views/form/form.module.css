@@ -39,6 +39,14 @@
     background-color: #bb37a7;
     cursor: pointer;
   }
+  .inputContainer {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.inputContainer label {
+    margin-right: 10px; /* Espacio entre el label y el input */
+}
 
 .input {
     margin-top: 1%;
