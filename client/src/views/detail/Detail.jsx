@@ -16,18 +16,20 @@ const Detail = () =>{
     return (
       <div className={style.containerAll}>
         <h2 className={style.title}>{videogameDetail?.name}</h2>
+        <div className={style.detail} >
+          <p>ID: {id}</p>       
+          <p>RELEASED: {videogameDetail.released}</p>
+          <p>RATING: {videogameDetail.rating}</p>
+          <p>GENRES: {videogameDetail.genres}</p>
+          <p>PLATFORMS: {videogameDetail.platforms}</p>
+          <p>DESCRIPTION</p>
+        </div>
+        <div className={style.description}>
+          <p>{videogameDetail.description}</p>
+          </div>
         <div className={style.imagenContainer}>
           <img src = {videogameDetail.background_image} alt= "name"/>
         </div> 
-        <div className={style.description} >
-
-          <p>ID: {id}</p>       
-          <p>Description: {videogameDetail.description}</p>
-          <p>Released: {videogameDetail.released}</p>
-          <p>Rating: {videogameDetail.rating}</p>
-          <p>Genres: {videogameDetail.genres}</p>
-          <p>Platforms: {videogameDetail.platforms}</p>
-        </div>
       </div>
     );
   }

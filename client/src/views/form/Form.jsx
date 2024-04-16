@@ -84,9 +84,18 @@ const Form = ()=>{
 
     const submitHandler =(event) =>{
         event.preventDefault(); //con esto indico que no me recargue la página cada vez que hago submit
-        console.log(input)
+        // console.log(input)
         dispatch(postVideogames(input))
-        //aquí seteo mi input vacío!!!!
+        
+        setInput({
+            name: "",
+            background_image: "",
+            description: "",
+            platforms: [],
+            released: "",
+            rating: "",
+            genres: [],
+        });
     }
     const orderPlatforms = platforms.sort((a,b) => a.name.localeCompare(b.name))
     const orderGenres = genres.sort((a,b) => a.name.localeCompare(b.name))
@@ -109,7 +118,7 @@ const Form = ()=>{
                 <div className={style.inputContainer}>
                     <label htmlFor="description">DESCRIPTION </label>
                     <input className={style.input} type="text" name="description" id="description" value={input.description} onChange={handleChange}></input>
-                    {/* {errors.description && <p style={{color: 'darkgrey'}}>{errors.description}</p>} */}
+                    {errors.description && <p style={{color: 'darkgrey'}}>{errors.description}</p>}
                 </div>
                 
                 <div className={style.inputContainer}>
@@ -151,17 +160,22 @@ const Form = ()=>{
                     ))}
                 </select>
                 {errors.genres && <p style={{color: 'darkgrey'}}>{errors.genres}</p>}
+
                 <ul >
                     {input.genres.map((i, index) => (
                         <li key={index}>
                             {i}
                             <button type="button" onClick={() => handleRemoveGenre(index)}>
-                                    x
-                                </button>
+                                 x
+                            </button>
                         </li>
                     ))}
-                    </ul>
-                <button className= {style.submit} type="submit">CREATE</button>
+                </ul>
+                    
+                <button className= {style.submit} type="submit" 
+                    disable={!input.name&&!input.rating&&!input.description&&!input.genres}>
+                    CREATE
+                </button>
             </form>
             </div>      
         </div>
@@ -170,20 +184,3 @@ const Form = ()=>{
 }
 
 export default Form;
-
-//en la 87 podría usar span
-/*
-<div>
-                    <label htmlFor="platforms">PLATFORMS </label>
-                    <input type="text" name="platforms" id="platforms" value={input.platforms} onChange={handleChange}></input>
-                    {errors.platforms && <p style={{color: 'darkgrey'}}>{errors.platforms}</p>}
-                </div>*/
-
-                /*    <label htmlFor="genres">GENRES </label>
-                    <select id='genres' name='genre'onChange={handleSelectChange}>
-                        <option value='none'>Select</option>
-                        {genres.map((genre)=>(
-                        <option key={genre.id} value={genre.name} id={genre.name}>{genre.name}</option>))}
-                    </select>
-                    {errors.genres && <p style={{color: 'darkgrey'}}>{errors.genres}</p>}
-                    <ul><li>{input.genres.map(elem => elem + ' ')}</li></ul> */

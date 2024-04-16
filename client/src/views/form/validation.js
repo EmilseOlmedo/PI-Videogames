@@ -16,8 +16,8 @@ const validation= (input)=>{
         errors.background_image = 'You must enter a valid URL'
     }
     //description
-    if(input.description.length>350){
-        errors.description = 'The description should not exceed 50 characters'
+    if(input.description.length>150){
+        errors.description = 'The description should not exceed 150 characters'
     }
     //platforms
     if(input.platforms.length>0 && !nameRegex.test(input.platforms)){

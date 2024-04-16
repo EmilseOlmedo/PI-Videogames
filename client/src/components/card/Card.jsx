@@ -17,7 +17,6 @@ const Card = ({game}) =>{
             </div>
             <div className={style.description}>
               <p>{genres}</p>
-              {/* <p>{genres.join(' | ')}</p> */}
             </div>
         </div>
       </Link>

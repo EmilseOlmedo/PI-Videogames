@@ -19,15 +19,14 @@ const URL_BASE = 'http://localhost:3001/videogames'
 const getAllVideogames = () =>{
     return async (dispatch) => {    //recibo un dispatch---El hook useDispatch sólo se puede utilizar en componentes funcionales
         try {
-            const {data} = await axios.get(URL_BASE);  
-            console.log('aa', data);    
+            const {data} = await axios.get(URL_BASE); 
+           
             return dispatch ({ 
                 type: GET_ALL_VIDEOGAMES, 
                 payload: data
             })
         } catch (error) {
             window.alert (error.message)
-            
         }
     }
  }
@@ -35,7 +34,7 @@ const getAllVideogames = () =>{
 const getVideogamesDetail = (id)=>{
     return async (dispatch) => {
         try {
-            const {data} = await axios.get(`${URL_BASE}/${id}`);
+            const {data} = await axios.get(`http://localhost:3001/videogames/${id}`);
             
             return dispatch ({
                 type: GET_VIDEOGAMES_DETAIL,
@@ -93,7 +92,7 @@ const getPlatforms = () => {
 }
 
 const postVideogames = (payload)=> {
-    return async (dispatch)=>{
+    return async ()=>{
         try {
             const {data} = await axios.post(URL_BASE, payload);
              return  ({
@@ -106,19 +105,6 @@ const postVideogames = (payload)=> {
          }
     }
 }
-
-    // export const addGame = (data) => {
-    //     return function (dispatch) {
-    //       try {
-    //         return dispatch({
-    //           type: ADD_GAME,
-    //           payload: data,
-    //         });
-    //       } catch (error) {
-    //         window.alert(error.message);
-    //       }
-    //     };
-    //   };
 
     const filterGameByGenre = (filter) => {
         return {

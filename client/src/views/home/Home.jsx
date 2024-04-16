@@ -32,7 +32,7 @@ const Home = () =>{
   }, [dispatch])
 
   //ORDER
-  //order alfabeticamente
+  //order alf
   const handleClickOrderAlp = (e) =>{
     e.preventDefault();
     dispatch(orderAlp(e.target.value))
@@ -45,7 +45,7 @@ const Home = () =>{
   }
 
   //FILTER
-  //por su origen api o db
+  //api o db
   const handleFilterCreated = (e)=>{
     e.preventDefault();
     dispatch(filterCreated(e.target.value));
